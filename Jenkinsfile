@@ -32,6 +32,15 @@ pipeline {
                 }
             }
         }
-
+ stage('Build') {
+            steps {
+                script {
+                    dir(ANGULAR_APP_DIR) {
+                        // Build the AngularJS application using the locally installed Angular CLI
+                        sh './node_modules/.bin/ng build'
+                    }
+                }
+            }
+        }
 }
 }
