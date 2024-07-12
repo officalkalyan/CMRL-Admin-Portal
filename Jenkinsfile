@@ -12,3 +12,5 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/officalkalyan/CMRL-Admin-Portal.git'
             }
         }
+    }
+}
