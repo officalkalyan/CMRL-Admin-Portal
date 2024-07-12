@@ -22,5 +22,16 @@ pipeline {
                 }
             }
     }
+       stage('Install Angular CLI') {
+            steps {
+                script {
+                    dir(ANGULAR_APP_DIR) {
+                        // Install Angular CLI locally within the project with legacy-peer-deps flag
+                        sh 'npm install @angular/cli --legacy-peer-deps'
+                    }
+                }
+            }
+        }
+
 }
 }
