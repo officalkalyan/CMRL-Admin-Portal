@@ -12,5 +12,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/officalkalyan/CMRL-Admin-Portal.git'
             }
         }
+      stage('Install Dependencies') {
+            steps {
+                script {
+                    dir(ANGULAR_APP_DIR) {
+                        // Install npm dependencies
+                        sh 'npm install --legacy-peer-deps'
+                    }
+                }
+            }
     }
 }
